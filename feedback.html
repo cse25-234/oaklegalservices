@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oak Debt Collectors | Feedback</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-logo-wrap">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="62" cy="28" r="18" fill="#E8650A" opacity="0.9"/>
+          <circle cx="62" cy="28" r="12" fill="#FF9A40"/>
+          <ellipse cx="48" cy="58" rx="12" ry="8" fill="#1A2B4A"/>
+          <ellipse cx="60" cy="50" rx="8" ry="7" fill="#1A2B4A"/>
+          <path d="M67 52 L73 55 L67 56 Z" fill="#E8650A"/>
+          <circle cx="63" cy="49" r="1.5" fill="#fff"/>
+          <circle cx="63.5" cy="49" r="0.7" fill="#1A2B4A"/>
+          <path d="M36 55 Q20 40 8 48 Q16 52 22 58 Q30 62 38 62 Z" fill="#1A2B4A"/>
+          <path d="M36 55 Q18 36 6 38 Q12 44 18 50 Z" fill="#243358"/>
+          <path d="M60 55 Q72 42 88 50 Q80 54 74 60 Q66 64 58 62 Z" fill="#1A2B4A"/>
+          <path d="M60 55 Q78 38 90 40 Q84 46 78 52 Z" fill="#243358"/>
+          <path d="M40 66 Q48 75 56 66 Q52 72 48 76 Q44 72 40 66 Z" fill="#1A2B4A"/>
+          <path d="M44 72 Q42 78 40 80 M44 72 Q44 79 44 82 M44 72 Q46 78 48 80" stroke="#E8650A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="brand-text-wrap">
+        <div class="brand-name">Oak Debt Collectors</div>
+        <div class="brand-tagline">Eagle Strength</div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="feedback.html">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb-nav">Home &rsaquo; <span>Feedback</span></div>
+    <h1>Client <span>Feedback</span></h1>
+    <p>Your experience matters — help us serve you better</p>
+  </div>
+</div>
+
+<!-- FEEDBACK SECTION -->
+<section class="light-section">
+  <div class="container">
+    <div class="row g-5">
+      <!-- FORM -->
+      <div class="col-lg-6">
+        <div class="feedback-form-wrap">
+          <div class="feedback-form-header">
+            <h3>Share Your Experience</h3>
+            <p>We value every client's feedback to improve our services</p>
+          </div>
+          <div class="feedback-form-body">
+            <div class="success-msg" id="feedback-success">
+              <i class="fas fa-check-circle me-2"></i> Thank you for your feedback! We appreciate your time and will review your submission.
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-control" id="fb-name" placeholder="Your full name"/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="fb-email" placeholder="your@email.com"/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Service Used *</label>
+              <select class="form-select" id="fb-service">
+                <option value="">Select a service...</option>
+                <option>Debt Collection</option>
+                <option>Legal Consultancy</option>
+                <option>Demand Letters</option>
+                <option>Debtor Tracing</option>
+                <option>Corporate Recovery</option>
+                <option>Credit Management</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Overall Rating *</label>
+              <div class="star-rating" id="star-rating">
+                <button class="star-btn" onclick="setRating(1)">&#9733;</button>
+                <button class="star-btn" onclick="setRating(2)">&#9733;</button>
+                <button class="star-btn" onclick="setRating(3)">&#9733;</button>
+                <button class="star-btn" onclick="setRating(4)">&#9733;</button>
+                <button class="star-btn" onclick="setRating(5)">&#9733;</button>
+              </div>
+              <input type="hidden" id="fb-rating" value="0"/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your Feedback *</label>
+              <textarea class="form-control" id="fb-message" rows="4" placeholder="Tell us about your experience with Oak Debt Collectors..."></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Would you recommend us?</label>
+              <div class="d-flex gap-3 mt-1">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="recommend" id="rec-yes" value="yes"/>
+                  <label class="form-check-label" for="rec-yes" style="font-size:0.9rem;">Yes, definitely!</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="recommend" id="rec-maybe" value="maybe"/>
+                  <label class="form-check-label" for="rec-maybe" style="font-size:0.9rem;">Maybe</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="recommend" id="rec-no" value="no"/>
+                  <label class="form-check-label" for="rec-no" style="font-size:0.9rem;">Not at this time</label>
+                </div>
+              </div>
+            </div>
+            <button class="btn-primary-oak w-100" onclick="submitFeedback()" style="text-align:center; padding:1rem;">
+              <i class="fas fa-paper-plane me-2"></i> Submit Feedback
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEWS -->
+      <div class="col-lg-6">
+        <p class="section-eyebrow">What Clients Say</p>
+        <h2 class="section-heading" style="font-size:1.8rem;">Recent <span>Reviews</span></h2>
+        <div class="orange-rule"></div>
+        <p class="text-muted mb-4" style="font-size:0.9rem;">Real feedback from clients who have trusted Oak Debt Collectors with their recovery cases.</p>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Absolutely professional. Recovered a debt that had been outstanding for 18 months in under 6 weeks. Impressed by both the speed and the ethical approach."</p>
+          <div class="reviewer">Boitshoko N. — Property Management, Gaborone</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"The legal consultancy service was invaluable. They helped us understand exactly what our options were and guided us through the entire enforcement process."</p>
+          <div class="reviewer">Lesego M. — Retail Group, Serowe</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★☆</div>
+          <p>"Very professional team. They kept communication clear throughout. Would recommend to any business struggling with unpaid invoices."</p>
+          <div class="reviewer">Thato K. — Construction, Tlokweng</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Outstanding service. Oak Debt Collectors brought in what we thought was a total write-off. Grateful for their persistence and professionalism."</p>
+          <div class="reviewer">Onkabetse S. — Transport Company, Lobatse</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand-name">Oak Debt Collectors</div>
+        <div class="footer-script">Eagle Strength</div>
+        <p class="footer-desc">Professional debt collection and legal consultancy serving Botswana with integrity, precision, and proven results.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:oakdebtcollectors@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+          <li><a href="feedback.html"><i class="fas fa-chevron-right"></i> Feedback</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="footer-heading">Our Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Debt Collection</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Legal Consultancy</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Demand Letters</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Debtor Tracing</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Corporate Recovery</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Plot 2306, Lenganeng, Tlokweng, Gaborone</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>3900107 / 75929059</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>oakdebtcollectors@gmail.com</span></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 8AM–5PM | Sat: 9AM–1PM</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 <span>Oak Debt Collectors</span>. All rights reserved.</p>
+      <p>Professional. Ethical. Effective.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  let currentRating = 0;
+  function setRating(val) {
+    currentRating = val;
+    document.getElementById('fb-rating').value = val;
+    document.querySelectorAll('.star-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', i < val);
+    });
+  }
+  function submitFeedback() {
+    const name    = document.getElementById('fb-name').value.trim();
+    const service = document.getElementById('fb-service').value;
+    const rating  = document.getElementById('fb-rating').value;
+    const msg     = document.getElementById('fb-message').value.trim();
+    if (!name || !service || rating === '0' || !msg) {
+      alert('Please fill in all required fields and select a rating.');
+      return;
+    }
+    document.getElementById('feedback-success').style.display = 'block';
+    document.getElementById('fb-name').value = '';
+    document.getElementById('fb-email').value = '';
+    document.getElementById('fb-service').value = '';
+    document.getElementById('fb-message').value = '';
+    currentRating = 0;
+    document.getElementById('fb-rating').value = '0';
+    document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('input[name="recommend"]').forEach(r => r.checked = false);
+    setTimeout(() => { document.getElementById('feedback-success').style.display = 'none'; }, 6000);
+  }
+</script>
+</body>
+</html>
